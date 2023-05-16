@@ -5,4 +5,49 @@ body {
   justify-content: center;
   min-width: 360px;
   font-family: Arial, Helvetica, sans-serif;
+  background-image: url('./gradient.jpg');
+}
+
+.card {
+  margin: 0 auto; /* Added */
+  float: none; /* Added */
+  margin-bottom: 10px; /* Added */
+  justify-content: center;
+  border-radius: 10%;
+  transition: transform .5s;
+}
+
+.card:hover {
+  transform: scale(1.03); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+.eth {
+  padding-bottom: 30px;
+}
+
+.form-control {
+  color: #ffffff;
+  /* border: none; */
+  border-bottom: #fffcfc;
+  border-radius: 50px;
+}
+
+.form-control:focus {
+  /* border-color: #ffffff; */
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #fffcfc;
+}
+
+.form-control::placeholder {
+  color: #ebebeb;
+}
+
+.form-control::placeholder::selection {
+  color: #c41818;
+}
+
+.btn {
+  color: #ffffff;
+  border-color: #ffffff;
+  border-bottom: #fffcfc;
+  border-radius: 50px;
 }
