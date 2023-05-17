@@ -32,8 +32,8 @@ body {
 }
 
 .form-control:focus {
-  /* border-color: #ffffff; */
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #fffcfc;
+  border-color: #ffffff00;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 255, 255, 0.6);
 }
 
 .form-control::placeholder {
@@ -55,7 +55,16 @@ body {
   border-width: 2px;
 }
 
+.is-validd:focus {
+  border-color: #00ffad;
+  border-width: 2px;
+}
+
 .is-invalidd {
+  border-color: #ff005d;
+  border-width: 2px;
+}
+.is-invalidd:focus {
   border-color: #ff005d;
   border-width: 2px;
 }
@@ -64,3 +73,4 @@ body {
   color: white;
   transition: ease-in;
 }
+

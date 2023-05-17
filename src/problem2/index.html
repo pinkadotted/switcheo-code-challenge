@@ -6,46 +6,60 @@
   <title>Fancy Form</title>
 
   <!-- You may add more stuff here -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.bundle.min.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link href="style.css" rel="stylesheet" />
 </head>
 
 <body class="body">
 
-  <!-- You may reorganise the whole HTML, as long as your form achieves the same effect. -->
-  <!-- <form onsubmit="return !1">
-    <label for="input-address">ETH Address</label>
-    <input id="input-address" />
-
-    <label for="input-amount">Amount to send</label>
-    <input id="input-amount" />
-
-    <label for="input-otp">OTP Authentication</label>
-    <input type="number" id="input-otp" />
-
-    <button>SEND TOKENS</button>
-  </form>
-  <script src="script.js"></script> -->
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Confirm your order:</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p id="modal-text"></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-primary">Submit transaction</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <div class="card justify-content-center align-items-center bg-transparent" style="width: 40rem; height: 30rem; box-shadow: 1px 10px 58px 3px rgba(255,255,255,0.72); ">
     <form>
-      <div class="form-group align-items-center justify-content-center">
+      <div class="form-group align-items-center justify-content-center" >
         <div>
           <img src="./eth-glyph-colored.png" alt="eth logo" height="200px" class="eth mx-auto d-block">
+          
         </div>
-        <input onfocusout="validAddressValidator()" type="text" class="form-control bg-transparent" id="ETHaddr" aria-describedby="emailHelp" placeholder="Enter the ETH Address you wish to send to!" style="width: 30rem; color:white;">
-        <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
-        <p id="valid-div" style="visibility: hidden; color: white;">
-
+        <div class="form-group">
+        <input autocomplete="off" oninput="return validAddressValidator()" type="text" class="form-control bg-transparent" id="ETHaddr" placeholder="Enter the ETH Address you wish to send to!" style="width: 30rem; color:white;">
+        </div>
+        <p id="valid-addr" style="visibility: hidden; color: white;">
         </p>
       </div>
       <div class="form-group">
-        <input type="text" class="form-control bg-transparent" id="ETHamt" placeholder="Enter the amount you wish to send!">
+        <input type="text" autocomplete="off" oninput="return isDigit() && bothValid()" class="form-control bg-transparent" id="ETHamt" placeholder="Enter the amount you wish to send!" style="width: 30rem; color:white;">
       </div>
+      <p id="valid-amt" style="visibility: hidden; color: white;"></p>
       <div class="text-center">
-        <button type="button" class="btn bg-transparent" data-bs-toggle="modal" data-bs-target="#exampleModal">Submit</button>
+        <button id="submit-button" onclick="modalVals()" data-toggle="modal" data-target="#exampleModal" type="button" class="btn bg-transparent disabled" data-bs-toggle="modal" data-bs-target="#exampleModal" >Submit</button>
     </div>
     </form>
+
+
+
 
   
 </body>
@@ -54,4 +68,5 @@
 <!-- <script src="script.js"></script> -->
 <script src="https://cdn.ethers.io/lib/ethers-5.4.umd.min.js"></script>
 <script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
 </html>
