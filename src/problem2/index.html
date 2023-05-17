@@ -1,6 +1,6 @@
 
 <html>
-  <script src="wallet-address-validator.min.js"></script>
+
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Fancy Form</title>
@@ -11,6 +11,8 @@
 </head>
 
 <body class="body">
+
+
 
   <!-- You may reorganise the whole HTML, as long as your form achieves the same effect. -->
   <!-- <form onsubmit="return !1">
@@ -33,7 +35,7 @@
         <div>
           <img src="./eth-glyph-colored.png" alt="eth logo" height="200px" class="eth mx-auto d-block">
         </div>
-        <input onfocusout="validAddressValidator()" type="email" class="form-control bg-transparent" id="ETHaddr" aria-describedby="emailHelp" placeholder="Enter your ETH Address!" style="width: 30rem; color:white;">
+        <input onfocusout="validAddressValidator()" type="text" class="form-control bg-transparent" id="ETHaddr" aria-describedby="emailHelp" placeholder="Enter the ETH Address you wish to send to!" style="width: 30rem; color:white;">
         <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
       </div>
       <div class="form-group">
@@ -44,6 +46,10 @@
     </div>
     </form>
   </div>
+
+
 </body>
+<!-- <script src="script.js"></script> -->
+<script src="https://cdn.ethers.io/lib/ethers-5.4.umd.min.js"></script>
 <script src="script.js"></script>
 </html>
