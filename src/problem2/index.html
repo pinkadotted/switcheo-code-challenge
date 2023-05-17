@@ -12,8 +12,6 @@
 
 <body class="body">
 
-
-
   <!-- You may reorganise the whole HTML, as long as your form achieves the same effect. -->
   <!-- <form onsubmit="return !1">
     <label for="input-address">ETH Address</label>
@@ -31,24 +29,28 @@
 
   <div class="card justify-content-center align-items-center bg-transparent" style="width: 40rem; height: 30rem; box-shadow: 1px 10px 58px 3px rgba(255,255,255,0.72); ">
     <form>
-      <div class="form-group align-items-center justify-content-center needs-validation">
+      <div class="form-group align-items-center justify-content-center">
         <div>
           <img src="./eth-glyph-colored.png" alt="eth logo" height="200px" class="eth mx-auto d-block">
         </div>
         <input onfocusout="validAddressValidator()" type="text" class="form-control bg-transparent" id="ETHaddr" aria-describedby="emailHelp" placeholder="Enter the ETH Address you wish to send to!" style="width: 30rem; color:white;">
         <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+        <p id="valid-div" style="visibility: hidden; color: white;">
+
+        </p>
       </div>
       <div class="form-group">
-        <input type="password" class="form-control bg-transparent" id="exampleInputPassword1" placeholder="Enter the amount you wish to send!">
+        <input type="text" class="form-control bg-transparent" id="ETHamt" placeholder="Enter the amount you wish to send!">
       </div>
       <div class="text-center">
-        <button type="submit" class="btn bg-transparent">Submit</button>
+        <button type="button" class="btn bg-transparent" data-bs-toggle="modal" data-bs-target="#exampleModal">Submit</button>
     </div>
     </form>
-  </div>
 
-
+  
 </body>
+ 
+
 <!-- <script src="script.js"></script> -->
 <script src="https://cdn.ethers.io/lib/ethers-5.4.umd.min.js"></script>
 <script src="script.js"></script>
