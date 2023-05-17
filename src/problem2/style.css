@@ -28,7 +28,6 @@ body {
 .form-control {
   color: #ffffff;
   /* border: none; */
-  border-bottom: #fffcfc;
   border-radius: 50px;
 }
 
@@ -48,6 +47,20 @@ body {
 .btn {
   color: #ffffff;
   border-color: #ffffff;
-  border-bottom: #fffcfc;
   border-radius: 50px;
+}
+
+.is-validd {
+  border-color: #00ffad;
+  border-width: 2px;
+}
+
+.is-invalidd {
+  border-color: #ff005d;
+  border-width: 2px;
+}
+
+.valid-div {
+  color: white;
+  transition: ease-in;
 }
